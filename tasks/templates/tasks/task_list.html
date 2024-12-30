@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% block content %}
+<h1>Lista de Tareas</h1>
+<!-- Utilizando el namespace para el reverse lookup -->
+<a href="{% url 'tasks:task_create' %}">Crear tarea</a>
+
+<ul>
+    {% for task in tasks %}
+        <li>
+            {{ task.title }} - {{ task.completed }}
+            <a href="{% url 'tasks:task_update' task.id %}">Editar</a>
+            <a href="{% url 'tasks:task_delete' task.id %}">Eliminar</a>
+        </li>
+    {% endfor %}
+</ul>
+{% endblock %}

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Mi Proyecto{% endblock %}</title>
+</head>
+<body>
+    <header>
+        <h1>Mi Proyecto</h1>
+    </header>
+
+    <main>
+        {% block content %}
+        <!-- Aquí irán los contenidos específicos de cada página -->
+        {% endblock %}
+    </main>
+
+    <footer>
+        <p>Pie de página</p>
+        <a href="{% url 'tasks:logout' %}">Cerrar sesión</a>
+    </footer>
+</body>
+</html>
